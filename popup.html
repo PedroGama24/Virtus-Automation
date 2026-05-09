@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Virtus Automation</title>
+  <style>
+    body {
+      width: 400px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      background-color: #f8f9fa;
+      color: #343a40;
+    }
+
+    h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #007bff;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    select,
+    textarea,
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    textarea {
+      height: 120px;
+      resize: vertical;
+      font-family: monospace;
+    }
+
+    button {
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #status {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .status-info {
+      background-color: #e2e3e5;
+      color: #383d41;
+    }
+
+    .status-success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .status-error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Virtus Automation</h3>
+
+  <div class="form-group">
+    <label for="product">Produto:</label>
+    <select id="product">
+      <option value="1">ABRACADEIRA ETIQUETA IDENTIFICAVEL DTC037</option>
+      <option value="2">ABRACADEIRA NYLON MEDIA DTC099</option>
+      <option value="3">ALCOOL ISOPROPILICO</option>
+      <option value="4">ANEL GUIA AGFE DTC133</option>
+      <option value="5">BUCHA ACABAMENTO CABO DROP DTC014</option>
+      <option value="6">CABO OPTICO - CFOAC - BLI A-B-CM-01-AR-LSZII FIBRA CLIENTE</option>
+      <option value="7">CONECTOR MECANICO SC APC VERDE DTC042</option>
+      <option value="8">ESTICADOR DROP CUNHA ANEL AGEF DTC135</option>
+      <option value="9">CONECTOR MECANICO SC UPC AZUL DTC043</option>
+      <option value="10">FECHO ACO INOXIDAVEL DTC134</option>
+      <option value="11">FITA ACO INOXIDAVEL DTC134</option>
+      <option value="12">FITA ISOLANTE PVC DTC107</option>
+      <option value="13">FIXADOR INTERNO DROP TIPO M DTC064</option>
+      <option value="14">FIXADOR INTERNO DROP TIPO O DTC064</option>
+      <option value="15">PARAFUSO PITAO DTC013</option>
+      <option value="16" data-type="onu">ONU NOKIA 6.0GHz</option>
+      <option value="17" data-type="onu">ONU NOKIA 5.0GHZ C/ VOIP</option>
+      <option value="18" data-type="onu">ONU FIBERHOME 6.0GHz</option>
+      <option value="19" data-type="onu">ONU FIBERHOME 5.0GHZ</option>
+      <option value="20" data-type="onu">ONU HUAWEI 5.0GHz</option>
+      <option value="21" data-type="onu">ONU HUAWEI 6.0GHz</option>
+      <option value="22" data-type="onu">ONU NOKIA 5.0GHZ S/ VOIP</option>
+      <option value="23">CABO DROP MICRO LOW FRICTION</option>
+      <option value="24">ABRACADEIRA NYLON PEQUENA DTC099</option>
+      <option value="25">ABRACADEIRA DE NYLON P</option>
+      <option value="26" data-type="onu">ONU REVERSA</option>
+      <option value="27" data-type="onu">ONU ZTE 6.0GHz</option>
+    </select>
+  </div>
+
+  <div id="serials-group" class="form-group hidden">
+    <label for="serials">Seriais (ONUs):</label>
+    <textarea id="serials" placeholder="Cole a lista de seriais aqui (um por linha)..."></textarea>
+  </div>
+
+  <div id="quantity-group" class="form-group hidden">
+    <label for="quantity">Quantidade:</label>
+    <input type="number" id="quantity" min="1" value="1">
+  </div>
+
+  <button id="start-btn">Iniciar Automação</button>
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
